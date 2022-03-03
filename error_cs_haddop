@@ -1,48 +1,22 @@
-sinampu@hadoop-nn001:~$ hdfs dfs -ls /user/sinampu/
-2022-03-02 20:07:09,758 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-Found 15 items
-drwxr-xr-x   - sinampu sinampu          0 2022-02-28 13:30 /user/sinampu/Assignment2Data
-drwxr-xr-x   - sinampu sinampu          0 2022-02-28 13:32 /user/sinampu/NewOutputDir1
-drwxr-xr-x   - sinampu sinampu          0 2022-02-28 13:47 /user/sinampu/NewOutputFolder1
-drwxr-xr-x   - sinampu sinampu          0 2022-02-28 13:19 /user/sinampu/OutputDir1
-drwxr-xr-x   - sinampu sinampu          0 2022-02-11 22:31 /user/sinampu/SimpleDir
-drwxr-xr-x   - sinampu sinampu          0 2022-03-02 19:28 /user/sinampu/WordCountOutput1
-drwxr-xr-x   - sinampu sinampu          0 2022-03-02 19:46 /user/sinampu/WordCountOutput2
--rw-r--r--   3 sinampu sinampu         53 2022-02-27 14:45 /user/sinampu/file1.txt
--rw-r--r--   3 sinampu sinampu         59 2022-02-27 14:52 /user/sinampu/file2.txt
-drwxr-xr-x   - sinampu sinampu          0 2022-02-27 15:09 /user/sinampu/output
-drwxr-xr-x   - sinampu sinampu          0 2022-02-27 15:11 /user/sinampu/output1
-drwxr-xr-x   - sinampu sinampu          0 2022-02-27 15:20 /user/sinampu/output2
-drwxr-xr-x   - sinampu sinampu          0 2022-02-27 15:40 /user/sinampu/output3
-drwxr-xr-x   - sinampu sinampu          0 2022-02-28 12:45 /user/sinampu/output5
--rwxrwxrwx   3 sinampu sinampu        380 2022-03-02 19:22 /user/sinampu/wordcount.py
-sinampu@hadoop-nn001:~$ hdfs dfs -ls /user/sinampu/Assignment2Data
-2022-03-02 20:07:23,631 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-Found 5 items
--rw-r--r--   3 sinampu sinampu     148129 2022-02-28 13:30 /user/sinampu/Assignment2Data/CommonSense.txt
--rw-r--r--   3 sinampu sinampu       9776 2022-02-28 13:30 /user/sinampu/Assignment2Data/MoonlightSonata.txt
--rw-r--r--   3 sinampu sinampu     780512 2022-02-28 13:30 /user/sinampu/Assignment2Data/PridePrejudice.txt
--rw-r--r--   3 sinampu sinampu     272272 2022-02-28 13:30 /user/sinampu/Assignment2Data/ScarletStudy.txt
--rw-r--r--   3 sinampu sinampu     368854 2022-02-28 13:30 /user/sinampu/Assignment2Data/SherlockHolmes.txt
-sinampu@hadoop-nn001:~$ hadoop jar /usr/local/hadoop-3.3.0/share/hadoop/tools/lib/hadoop-streaming-3.3.0.jar -file /home/sinampu/mapper.py -mapper /home/sinampu/mapper.py -file /home/sinampu/reducer.py -reducer /home/sinampu/reducer.py -input /user/sinampu/Assignment2Data/ -output /user/sinampu/OutputFolder001
-2022-03-02 20:08:09,111 WARN streaming.StreamJob: -file option is deprecated, please use generic option -files instead.
-2022-03-02 20:08:09,255 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-packageJobJar: [/home/sinampu/mapper.py, /home/sinampu/reducer.py, /tmp/hadoop-unjar5721571353641715956/] [] /tmp/streamjob5677600525953693787.jar tmpDir=null
-2022-03-02 20:08:10,094 INFO client.DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at hadoop-nn001.cs.okstate.edu/192.168.122.2:8032
-2022-03-02 20:08:10,276 INFO client.DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at hadoop-nn001.cs.okstate.edu/192.168.122.2:8032
-2022-03-02 20:08:10,581 INFO mapreduce.JobResourceUploader: Disabling Erasure Coding for path: /tmp/hadoop-yarn/staging/sinampu/.staging/job_1646249209374_0014
-2022-03-02 20:08:11,039 INFO mapred.FileInputFormat: Total input files to process : 5
-2022-03-02 20:08:11,160 INFO mapreduce.JobSubmitter: number of splits:5
-2022-03-02 20:08:11,329 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1646249209374_0014
-2022-03-02 20:08:11,329 INFO mapreduce.JobSubmitter: Executing with tokens: []
-2022-03-02 20:08:11,539 INFO conf.Configuration: resource-types.xml not found
-2022-03-02 20:08:11,540 INFO resource.ResourceUtils: Unable to find 'resource-types.xml'.
-2022-03-02 20:08:11,631 INFO impl.YarnClientImpl: Submitted application application_1646249209374_0014
-2022-03-02 20:08:11,679 INFO mapreduce.Job: The url to track the job: http://hadoop-nn001.cs.okstate.edu:8088/proxy/application_1646249209374_0014/
-2022-03-02 20:08:11,682 INFO mapreduce.Job: Running job: job_1646249209374_0014
-2022-03-02 20:08:16,810 INFO mapreduce.Job: Job job_1646249209374_0014 running in uber mode : false
-2022-03-02 20:08:16,812 INFO mapreduce.Job:  map 0% reduce 0%
-2022-03-02 20:08:19,904 INFO mapreduce.Job: Task Id : attempt_1646249209374_0014_m_000003_0, Status : FAILED
+sinampu@hadoop-nn001:~$ hadoop jar /usr/local/hadoop-3.3.0/share/hadoop/tools/lib/hadoop-streaming-3.3.0.jar -file /home/sinampu/mapper.py -mapper /home/sinampu/mapper.py -file /home/sinampu/reducer.py -reducer /home/sinampu/reducer.py -input /user/sinampu/Assignment2Data/ -output /user/sinampu/OutputFolder002
+2022-03-02 20:18:39,121 WARN streaming.StreamJob: -file option is deprecated, please use generic option -files instead.
+2022-03-02 20:18:39,255 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+packageJobJar: [/home/sinampu/mapper.py, /home/sinampu/reducer.py, /tmp/hadoop-unjar8703514997032309161/] [] /tmp/streamjob5162640060773768341.jar tmpDir=null
+2022-03-02 20:18:40,246 INFO client.DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at hadoop-nn001.cs.okstate.edu/192.168.122.2:8032
+2022-03-02 20:18:40,434 INFO client.DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at hadoop-nn001.cs.okstate.edu/192.168.122.2:8032
+2022-03-02 20:18:40,834 INFO mapreduce.JobResourceUploader: Disabling Erasure Coding for path: /tmp/hadoop-yarn/staging/sinampu/.staging/job_1646249209374_0015
+2022-03-02 20:18:41,310 INFO mapred.FileInputFormat: Total input files to process : 5
+2022-03-02 20:18:41,431 INFO mapreduce.JobSubmitter: number of splits:5
+2022-03-02 20:18:41,598 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1646249209374_0015
+2022-03-02 20:18:41,599 INFO mapreduce.JobSubmitter: Executing with tokens: []
+2022-03-02 20:18:41,822 INFO conf.Configuration: resource-types.xml not found
+2022-03-02 20:18:41,823 INFO resource.ResourceUtils: Unable to find 'resource-types.xml'.
+2022-03-02 20:18:41,933 INFO impl.YarnClientImpl: Submitted application application_1646249209374_0015
+2022-03-02 20:18:42,010 INFO mapreduce.Job: The url to track the job: http://hadoop-nn001.cs.okstate.edu:8088/proxy/application_1646249209374_0015/
+2022-03-02 20:18:42,012 INFO mapreduce.Job: Running job: job_1646249209374_0015
+2022-03-02 20:18:47,129 INFO mapreduce.Job: Job job_1646249209374_0015 running in uber mode : false
+2022-03-02 20:18:47,131 INFO mapreduce.Job:  map 0% reduce 0%
+2022-03-02 20:18:50,221 INFO mapreduce.Job: Task Id : attempt_1646249209374_0015_m_000004_0, Status : FAILED
 Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 2
 	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:326)
 	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:539)
@@ -57,7 +31,7 @@ Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess fa
 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1845)
 	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:172)
 
-2022-03-02 20:08:20,943 INFO mapreduce.Job: Task Id : attempt_1646249209374_0014_m_000004_0, Status : FAILED
+2022-03-02 20:18:51,266 INFO mapreduce.Job: Task Id : attempt_1646249209374_0015_m_000000_0, Status : FAILED
 Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 2
 	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:326)
 	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:539)
@@ -72,7 +46,7 @@ Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess fa
 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1845)
 	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:172)
 
-2022-03-02 20:08:20,946 INFO mapreduce.Job: Task Id : attempt_1646249209374_0014_m_000000_0, Status : FAILED
+2022-03-02 20:18:51,269 INFO mapreduce.Job: Task Id : attempt_1646249209374_0015_m_000001_0, Status : FAILED
 Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 2
 	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:326)
 	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:539)
@@ -87,7 +61,7 @@ Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess fa
 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1845)
 	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:172)
 
-2022-03-02 20:08:20,949 INFO mapreduce.Job: Task Id : attempt_1646249209374_0014_m_000001_0, Status : FAILED
+2022-03-02 20:18:51,273 INFO mapreduce.Job: Task Id : attempt_1646249209374_0015_m_000003_0, Status : FAILED
 Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 2
 	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:326)
 	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:539)
@@ -102,7 +76,7 @@ Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess fa
 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1845)
 	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:172)
 
-2022-03-02 20:08:20,952 INFO mapreduce.Job: Task Id : attempt_1646249209374_0014_m_000002_0, Status : FAILED
+2022-03-02 20:18:51,276 INFO mapreduce.Job: Task Id : attempt_1646249209374_0015_m_000002_0, Status : FAILED
 Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 2
 	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:326)
 	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:539)
@@ -117,7 +91,7 @@ Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess fa
 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1845)
 	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:172)
 
-2022-03-02 20:08:23,988 INFO mapreduce.Job: Task Id : attempt_1646249209374_0014_m_000003_1, Status : FAILED
+2022-03-02 20:18:54,311 INFO mapreduce.Job: Task Id : attempt_1646249209374_0015_m_000002_1, Status : FAILED
 Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 2
 	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:326)
 	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:539)
@@ -132,7 +106,7 @@ Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess fa
 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1845)
 	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:172)
 
-2022-03-02 20:08:23,991 INFO mapreduce.Job: Task Id : attempt_1646249209374_0014_m_000004_1, Status : FAILED
+2022-03-02 20:18:54,314 INFO mapreduce.Job: Task Id : attempt_1646249209374_0015_m_000000_1, Status : FAILED
 Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 2
 	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:326)
 	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:539)
@@ -147,7 +121,7 @@ Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess fa
 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1845)
 	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:172)
 
-2022-03-02 20:08:25,006 INFO mapreduce.Job: Task Id : attempt_1646249209374_0014_m_000002_1, Status : FAILED
+2022-03-02 20:18:54,317 INFO mapreduce.Job: Task Id : attempt_1646249209374_0015_m_000001_1, Status : FAILED
 Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 2
 	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:326)
 	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:539)
@@ -162,7 +136,7 @@ Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess fa
 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1845)
 	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:172)
 
-2022-03-02 20:08:25,009 INFO mapreduce.Job: Task Id : attempt_1646249209374_0014_m_000000_1, Status : FAILED
+2022-03-02 20:18:54,320 INFO mapreduce.Job: Task Id : attempt_1646249209374_0015_m_000003_1, Status : FAILED
 Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 2
 	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:326)
 	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:539)
@@ -177,7 +151,7 @@ Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess fa
 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1845)
 	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:172)
 
-2022-03-02 20:08:25,012 INFO mapreduce.Job: Task Id : attempt_1646249209374_0014_m_000001_1, Status : FAILED
+2022-03-02 20:18:54,322 INFO mapreduce.Job: Task Id : attempt_1646249209374_0015_m_000004_1, Status : FAILED
 Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 2
 	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:326)
 	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:539)
@@ -192,7 +166,7 @@ Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess fa
 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1845)
 	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:172)
 
-2022-03-02 20:08:28,043 INFO mapreduce.Job: Task Id : attempt_1646249209374_0014_m_000002_2, Status : FAILED
+2022-03-02 20:18:58,364 INFO mapreduce.Job: Task Id : attempt_1646249209374_0015_m_000002_2, Status : FAILED
 Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 2
 	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:326)
 	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:539)
@@ -207,7 +181,7 @@ Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess fa
 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1845)
 	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:172)
 
-2022-03-02 20:08:29,056 INFO mapreduce.Job: Task Id : attempt_1646249209374_0014_m_000004_2, Status : FAILED
+2022-03-02 20:18:58,367 INFO mapreduce.Job: Task Id : attempt_1646249209374_0015_m_000001_2, Status : FAILED
 Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 2
 	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:326)
 	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:539)
@@ -222,7 +196,7 @@ Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess fa
 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1845)
 	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:172)
 
-2022-03-02 20:08:29,059 INFO mapreduce.Job: Task Id : attempt_1646249209374_0014_m_000001_2, Status : FAILED
+2022-03-02 20:18:58,369 INFO mapreduce.Job: Task Id : attempt_1646249209374_0015_m_000000_2, Status : FAILED
 Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 2
 	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:326)
 	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:539)
@@ -237,7 +211,7 @@ Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess fa
 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1845)
 	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:172)
 
-2022-03-02 20:08:29,062 INFO mapreduce.Job: Task Id : attempt_1646249209374_0014_m_000003_2, Status : FAILED
+2022-03-02 20:18:58,372 INFO mapreduce.Job: Task Id : attempt_1646249209374_0015_m_000004_2, Status : FAILED
 Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 2
 	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:326)
 	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:539)
@@ -252,7 +226,7 @@ Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess fa
 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1845)
 	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:172)
 
-2022-03-02 20:08:29,065 INFO mapreduce.Job: Task Id : attempt_1646249209374_0014_m_000000_2, Status : FAILED
+2022-03-02 20:18:58,374 INFO mapreduce.Job: Task Id : attempt_1646249209374_0015_m_000003_2, Status : FAILED
 Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 2
 	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:326)
 	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:539)
@@ -267,28 +241,28 @@ Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess fa
 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1845)
 	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:172)
 
-2022-03-02 20:08:33,113 INFO mapreduce.Job:  map 100% reduce 100%
-2022-03-02 20:08:33,129 INFO mapreduce.Job: Job job_1646249209374_0014 failed with state FAILED due to: Task failed task_1646249209374_0014_m_000001
+2022-03-02 20:19:02,411 INFO mapreduce.Job:  map 100% reduce 100%
+2022-03-02 20:19:02,428 INFO mapreduce.Job: Job job_1646249209374_0015 failed with state FAILED due to: Task failed task_1646249209374_0015_m_000002
 Job failed as tasks failed. failedMaps:1 failedReduces:0 killedMaps:0 killedReduces: 0
 
-2022-03-02 20:08:33,253 INFO mapreduce.Job: Counters: 15
+2022-03-02 20:19:02,551 INFO mapreduce.Job: Counters: 15
 	Job Counters 
 		Failed map tasks=16
 		Killed map tasks=4
 		Killed reduce tasks=1
 		Launched map tasks=20
 		Other local map tasks=15
-		Data-local map tasks=4
-		Rack-local map tasks=1
-		Total time spent by all maps in occupied slots (ms)=230415
+		Data-local map tasks=3
+		Rack-local map tasks=2
+		Total time spent by all maps in occupied slots (ms)=207775
 		Total time spent by all reduces in occupied slots (ms)=0
-		Total time spent by all map tasks (ms)=46083
-		Total vcore-milliseconds taken by all map tasks=46083
-		Total megabyte-milliseconds taken by all map tasks=235944960
+		Total time spent by all map tasks (ms)=41555
+		Total vcore-milliseconds taken by all map tasks=41555
+		Total megabyte-milliseconds taken by all map tasks=212761600
 	Map-Reduce Framework
 		CPU time spent (ms)=0
 		Physical memory (bytes) snapshot=0
 		Virtual memory (bytes) snapshot=0
-2022-03-02 20:08:33,253 ERROR streaming.StreamJob: Job not successful!
+2022-03-02 20:19:02,551 ERROR streaming.StreamJob: Job not successful!
 Streaming Command Failed!
 sinampu@hadoop-nn001:~$ 
